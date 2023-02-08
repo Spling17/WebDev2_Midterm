@@ -1,0 +1,33 @@
+$pc: 1080px; // PC
+$pc2: 960px; // PC2
+$tab: 800px; // tb
+$sp: 650px;  // sp
+
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin pc2 {
+  @media screen and (max-width: ($pc2)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+/*
+@include pc2 {
+};
+@include tab {
+};
+@include sp {
+};
+*/
