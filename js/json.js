@@ -1,5 +1,4 @@
-
-[
+const products = [
   {
   "id": 0,
   "name": "Cotton T-shirt",
@@ -66,7 +65,7 @@
   },
 ];
 
-[
+const pickup = [
   {
     "id": "pickup-0",
     "name": "Colorful Geometric Patterns",
