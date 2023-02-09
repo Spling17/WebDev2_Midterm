@@ -1,17 +1,76 @@
 @import "mixin";
-/* ---------- header ---------- */
-// <!DOCTYPE html>
-// <html lang="en">
 
-// <head>
-//   <meta charset="UTF-8">
-//   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//   <meta
-//   name="keywords"
-//   content="afirica"/>
-//   <title>Tugende</title>
-//   <link href="main.css" rel="stylesheet">
-//   <link rel="icon" type="image/png" href="img/logo1.png">
-//   <link href="https://fonts.googleapis.com/css?family=Futura" rel="stylesheet">
-// </head>
+/* ---------- header ---------- */
+.top-header {
+  background-color: black;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .top-icon-1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    margin-left: 25px;
+  }
+  
+  .top-icon-2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-right: 25px;
+  }
+}
+
+.top-header img {
+  object-fit: cover;
+  height: 20px;
+  margin: 0 15px;
+}
+
+/* --------- page-header ---------*/
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  margin: 0 50px;
+}
+
+/* --------- header_nav ---------*/
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  height: 40%;
+  /* text-transform: uppercase; */
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.main-nav {
+  display: flex;
+  font-size: large;
+  list-style: none;
+}
+
+.main-nav li {
+  margin-left: 25px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+}
+
+hr {
+  margin-bottom: 3%;
+}
+
+
