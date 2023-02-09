@@ -25,8 +25,10 @@ html p {
   margin: 10px 0 20px 5px;
 }
 html button {
-  font-size: 2.2rem;
-  font-weight: 500;
+  background-color: #000000;
+  color: #fffffe;
+  font-size: 1rem;
+  font-weight: 100;
   padding: 10px 60px;
   border: none;
   border-radius: 0.5rem;
@@ -154,38 +156,36 @@ hr {
 */
 /* ---------- content-2 ---------- */
 .content img {
-  width: 27vw;
+  width: 25vw;
   height: auto;
   margin-top: 15px;
+  /* .pick-item {
+    width: 30%;
+    height: auto;
+    margin-top: 15px;
+  } */
+  /* .pick-up {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  } */
 }
-
-/* .pick-item {
-  width: 30%;
-  height: auto;
-  margin-top: 15px;
-} */
-/* .pick-up {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  justify-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-} */
-.item {
+.content img .item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-.grid {
+.content img .grid {
   display: grid;
   justify-items: center;
   align-content: center;
   gap: 0px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   width: 100%;
   margin-top: 1%;
   margin-bottom: 50px;

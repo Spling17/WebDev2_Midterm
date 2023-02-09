@@ -3,8 +3,8 @@
 $color-text: #161616;
 // $color-text2: #5e6973;
 // $color-main: #2D7A86;
-// $color-background: #EEE7D7;
-// $color-accent: #FCCE00;
+$color-btn: #000000;
+$color-btnText: #fffffe;
 // $color-star:  #966A40;
 // $color-grey: #FCFCF7;
 
@@ -40,72 +40,24 @@ html {
     font-size: medium;
     margin: 10px 0 20px 5px;
   }
+  
 
-  button {
-    // background-color: $color-main;
-    // color: $color-grey;
-    font-size: 2.2rem;
-    font-weight: 500;
-    // font-family: $font-playFair;
-    padding: 10px 60px;
-    border: none;
-    border-radius: 0.5rem;
-    margin: 10px 0 30px 0;
-  }
+    button {
+      background-color: $color-btn;
+      color: $color-btnText;
+      font-size: 1rem;
+      font-weight: 100;
+      // font-family: $font-playFair;
+      padding: 10px 60px;
+      border: none;
+      border-radius: 0.5rem;
+      margin: 10px 0 30px 0;
+    // button:hover{
+  
+    // }
+    }
+  
   ul {
     list-style: none;
   }
 }
-
-// html {
-//   font-size: 65%;
-//   background-color: $color-grey;
-
-//   body{
-//     font-size: 1.6rem;
-//     font-family: $font-playFair;
-//     color: $color-text2;
-//   }
-//   h1, h2, h3, h4 {
-//     font-family: $font-lato;
-//     font-weight: 100;
-//     color: $color-text;
-//     padding-top: 30px;
-//   }
-//   h1 {
-//     font-size: 5.5rem;
-//     line-height: 7rem;
-//   }
-//   h2 {
-//     font-size: 4rem;
-//     text-align: center;
-//   }
-//   h3 {
-//     font-size: 3rem;
-//   }
-//   h4 {
-//     font-size: 2.3rem;
-//   }
-//   a {
-//     color: $color-text2;
-//     text-decoration: none;
-//   }
-//   p {
-//     color: $color-text2;
-//     line-height: 2.3rem;
-//   }
-//   ul {
-//     list-style: none;
-//   }
-//   button {
-//     background-color: $color-main;
-    // color: $color-grey;
-    // font-size: 2.2rem;
-    // font-weight: 500;
-    // font-family: $font-playFair;
-//     padding: 10px 60px;
-//     border: none;
-//     border-radius: 0.5rem;
-//     margin: 10px 0 30px 0;
-//   }
-// }
