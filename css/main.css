@@ -305,12 +305,13 @@ hr {
 .cart {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   width: 360px;
   min-height: 100px;
   padding: 20px;
   background: white;
   box-shadow: -2px 0 4px hsla(0deg, 4%, 15%, 0.1);
+  transition: 0.3s;
 }
 .cart .cart-title {
   text-align: center;
@@ -376,6 +377,21 @@ hr {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+}
+.cart .btn-buy:hover {
+  background: rgb(239, 52, 52);
+}
+.cart #close-cart {
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+}
+
+.cart.active {
+  right: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
