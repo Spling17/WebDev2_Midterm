@@ -125,36 +125,7 @@ hr {
 @include sp {
 };
 */
-/* ---------- content-1 ---------- */
-.main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5% 5%;
-}
-
-.main-page {
-  text-align: left;
-  width: 40%;
-  word-break: break-word;
-  margin-left: 1%;
-}
-
-.main-img {
-  width: 55%;
-  height: auto;
-  margin-right: 4%;
-}
-
-/*
-@include pc2 {
-};
-@include tab {
-};
-@include sp {
-};
-*/
-/* ---------- content-2 ---------- */
+/* ---------- content ---------- */
 .content img {
   width: 25vw;
   height: auto;
