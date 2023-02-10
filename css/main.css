@@ -19,7 +19,7 @@ html body {
   padding: 0;
 }
 html h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin: 10px 0;
 }
 html h2 {
@@ -132,6 +132,33 @@ html ul {
 
 hr {
   margin-bottom: 3%;
+}
+
+/*
+@include pc2 {
+};
+@include tab {
+};
+@include sp {
+};
+*/
+/* ---------- content-1 ---------- */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 5%;
+}
+.main .main-page {
+  text-align: left;
+  width: 40%;
+  word-break: break-word;
+  margin-left: 1%;
+}
+.main .main-img {
+  width: 55%;
+  height: auto;
+  margin-right: 4%;
 }
 
 /*

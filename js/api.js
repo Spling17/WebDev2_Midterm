@@ -1,6 +1,6 @@
 
 async function getProductsData(){
-  const res = await sendHTTPRequest("GET","https://gist.githubusercontent.com/Spling17/07221f7ee7e0e878b496a44fcbb9961a/raw/3a268bca84b5fb9c63ac552465210bd7ec4640f2/products.json")
+  const res = await sendHTTPRequest("GET","https://gist.githubusercontent.com/Spling17/07221f7ee7e0e878b496a44fcbb9961a/raw/b6942b1fa385845b8c1ee15702855975e763ed6d/products.json")
   const productTemplate = document.querySelector("template")
   const items = document.querySelector(".items")
   for (const product of res) {
