@@ -12,8 +12,7 @@ async function getProductsData(){
     productElClone
       .querySelector('img')
       .setAttribute('src', product.imgSrc)
-    productElClone.querySelector('.productName').textContent =
-      product.name
+    productElClone.querySelector('.productName').textContent = product.name
     productElClone.querySelector('.productPrice').textContent = product.price
     productElClone.querySelector('.description').textContent = product.description
     productElClone.querySelector('.item').id = product.id
