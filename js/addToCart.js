@@ -133,35 +133,6 @@ function upDataTotal(){
   }
 }
 
-
-
-
-
-
-// const btn = document.querySelectorAll(".addbtn")
-
-// function getBtnData () {
-//   btn.forEach(() =>{
-//     console.log(btn)
-//   })
-// }
-
-
-// //SERECT ELEMENTS
-// const productsEl = document.querySelector(".item");
-
-// //RENDER PRODUCTS
-// function renderProducts(){
-//   products.forEach( (product) => {
-//     productsEl.innerHTML += ``
-//   }
-//   )
-// }
-// renderProducts();
-
-
-// alert("abc");
-
 /*
 queryselectorAll を使ってボタンを全て取得
 ボタンをforeachで回して、addEventListenerを使ってクリックしたエレメントのIDを取得
