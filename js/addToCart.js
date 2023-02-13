@@ -2,6 +2,10 @@
 let cartIcon = document.querySelector("#cart-icon");
 let cart = document.querySelector(".cart");
 let closeCart = document.querySelector("#close-cart");
+const cartContent = document.querySelector('.cart-content')
+const cartTemplate = document.querySelector('#cart')
+const myCart = []
+const tmpData = []
 
 //Open Cart
 cartIcon.onclick = () => {
@@ -18,6 +22,39 @@ if (document.readyState == 'loading'){
 }else{
   ready();
 }
+
+// ===================================
+// From bottom JSON
+// ===================================
+async function getProductsData() {
+  const res = await sendHTTPRequest(
+    'GET',
+    'https://gist.githubusercontent.com/Spling17/07221f7ee7e0e878b496a44fcbb9961a/raw/b6942b1fa385845b8c1ee15702855975e763ed6d/products.json'
+  )
+  const productTemplate = document.querySelector('template')
+  const items = document.querySelector('.items')
+  for (const product of res) {
+    // product list
+    const productElClone = document.importNode(productTemplate.content, true)
+    productElClone.querySelector('img').setAttribute('src', product.imgSrc)
+    productElClone.querySelector('.productName').textContent = product.name
+    productElClone.querySelector('.productPrice').textContent = product.price
+    productElClone.querySelector('.description').textContent =
+      product.description
+    productElClone.querySelector('.item').id = product.id
+    items.appendChild(productElClone)
+  }
+
+  addCartClicked(res)
+}
+
+async function sendHTTPRequest(method, url) {
+  const { data } = await axios(url, { method })
+  console.log(data)
+  return data
+}
+
+window.addEventListener('DOMContentLoaded', getProductsData)
 
 //Making Function
 function ready() {
@@ -41,8 +78,9 @@ function ready() {
     button.addEventListener("click",addCartClicked)
   }
   // //Buy Button Work
-  document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked);
+  // document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked);
 }
+
 //Buy Button
 function buyButtonClicked(){
   alert('Your Order is placed')
@@ -80,6 +118,49 @@ function quantityChanged(event){
 //   upDataTotal();
 // }
 
+function addCartClicked(res) {
+  const addBtns = document.querySelectorAll('.addbtn')
+  let currQuantity = 0
+  // const addVal = 1
+  addBtns.forEach((item) => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault()
+      const thisID = this.parentElement.id
+      if (tmpData.length > 0) tmpData.pop()
+
+      let isExist = false
+      for (const product of myCart) {
+        if (product.id == thisID) isExist = true
+      }
+
+      while (cartContent.firstChild) {
+        cartContent.removeChild(cartContent.firstChild)
+      }
+
+      if (!isExist) {
+        for (const product of res) {
+          if (thisID == product.id) {
+            product['quantity'] = 0
+            product.quantity += 1
+            myCart.push(product)
+            tmpData.push(product)
+            createEl(myCart, thisID)
+          }
+        }
+        console.log('Not Exist')
+      } else {
+        console.log('Exist')
+        updEl(myCart, thisID)
+      }
+            // document
+      //   .querySelector('.cart-quantity')
+      //   .setAttribute('value', currQuantity)
+      console.log(document.querySelector('.cart-quantity'))
+      console.log(tmpData)
+    })
+  })
+}
+
 function addCartClicked(event){
   var button = event.target;
   var shopProducts = button.parentElement;
@@ -100,19 +181,20 @@ function addProductToCart(title, price, productImg){
   //   return;
   // }
 }
-var cartBoxContent = `
-      <img src="${productImg}" alt="" class="cart-img">
-      <div class="detail-cox">
-        <div class="cart-product-title">${title}</div>
-        <div class="cart-price">${price}</div>
-        <input type="number" value="1" class="cart-quantity">
-      </div>
-      <i class='bx bx-trash-alt cart-remove'></i>
-`
-cartShopBox.innertHTML = cartBoxContent
-cartItems.append(cartShopBox)
-cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click',removeCartItem);
-cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change',quantityChanged);
+
+// var cartBoxContent = `
+//       // <img src="${productImg}" alt="" class="cart-img">
+//       // <div class="detail-cox">
+//       //   <div class="cart-product-title">${title}</div>
+//       //   <div class="cart-price">${price}</div>
+//       //   <input type="number" value="1" class="cart-quantity">
+//       // </div>
+//       // <i class='bx bx-trash-alt cart-remove'></i>
+// `
+// cartShopBox.innertHTML = cartBoxContent
+// cartItems.append(cartShopBox)
+// cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click',removeCartItem);
+// cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change',quantityChanged);
 
 //Update Total
 function upDataTotal(){
@@ -132,16 +214,3 @@ function upDataTotal(){
     document.getElementsByClassName('total-price')[0].innerText = "$" + total;
   }
 }
-
-/*
-queryselectorAll を使ってボタンを全て取得
-ボタンをforeachで回して、addEventListenerを使ってクリックしたエレメントのIDを取得
-2のIDをproductのidと合っているか評価する
-合っていたら表示する用のカートに追加する (表示用の配列と表示用に追加する為の配列を用意する)
-カートに追加したアイテムをdomで表示する
-
-4の追加するための配列は毎回、中身をクリアする
-*わからなくなったらconsole.log()等を使って返ってくる値を確認する。
-*2でthisを使うとボタンのNodeが返ってくるはずだからthis.nodeParentをつけてdivのNodeの情報をconsoleで出すように
-*3で2の時にとったNodeのidをproduct.idと等しいかifで評価する。 trueならカートへ
-*/

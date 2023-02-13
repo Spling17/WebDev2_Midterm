@@ -28,8 +28,8 @@ html h2 {
   text-align: center;
 }
 html h3 {
-  font-size: 1.8rem;
-  margin: 12px 0 5px 8px;
+  font-size: 1.5rem;
+  padding-top: 12px;
 }
 html p {
   font-size: medium;
@@ -46,7 +46,7 @@ html button {
   padding: 10px 60px;
   border: none;
   border-radius: 0.5rem;
-  margin: 10px 0 30px 0;
+  margin: 10px 0 20px 0;
 }
 html ul {
   list-style: none;
@@ -161,40 +161,44 @@ hr {
   margin-right: 4%;
 }
 
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
+/*
+@include pc2 {
+};
+@include tab {
+};
+@include sp {
+};
+*/
+/* ---------- content ---------- */
+.content {
+  margin-top: 15px;
+  margin: 1% 1.5rem 50px 1.5rem;
   text-align: center;
-  margin-bottom: 1.5rem;
 }
-
-.shop {
-  margin-top: 2rem;
-}
-
-.shop-content {
+.content .items {
   display: grid;
   justify-items: center;
   align-content: center;
   gap: 1.5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   width: 100%;
   margin-top: 1%;
   margin-bottom: 50px;
 }
-
-.product-box {
+.content .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
   position: relative;
 }
-
-.product-box:hover {
+.content .item:hover {
   padding: 10px;
   border: 1.5px solid black;
   transition: 0.2s;
 }
-
-.add-cart {
+.content .bx {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -204,11 +208,27 @@ hr {
   padding: 12px;
   cursor: pointer;
 }
-
-.add-cart:hover {
+.content .bx:hover {
   background: hsl(249deg, 32%, 17%);
 }
+.content p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
 
+/* .pick-item {
+  width: 30%;
+  height: auto;
+  margin-top: 15px;
+} */
+/* .pick-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+} */
 /*
 @include pc2 {
 };
@@ -320,6 +340,7 @@ hr {
   background: white;
   box-shadow: -2px 0 4px hsla(0deg, 4%, 15%, 0.1);
   transition: 0.3s;
+  z-index: 999;
 }
 .cart .cart-title {
   text-align: center;
