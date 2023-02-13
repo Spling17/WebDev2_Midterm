@@ -35,18 +35,23 @@
     transition: 0.2s;
   }
 
-  .bx {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 1.7rem;
+  .addbtn {
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    // font-size: 1.7rem;
     background-color: black;
     color: white;
-    padding:12px;
-    cursor: pointer;
+    font-weight: 200;
+    // padding:12px;
+    // cursor: pointer;
   }
-  .bx:hover {
-    background: hsl(249, 32%, 17%);
+
+  .addbtn:hover {
+    background: hsl(0, 66%, 54%);
+    // border: 1.5px solid black;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
   }
 
   p {

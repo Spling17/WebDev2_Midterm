@@ -198,18 +198,15 @@ hr {
   border: 1.5px solid black;
   transition: 0.2s;
 }
-.content .bx {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 1.7rem;
+.content .addbtn {
   background-color: black;
   color: white;
-  padding: 12px;
-  cursor: pointer;
+  font-weight: 200;
 }
-.content .bx:hover {
-  background: hsl(249deg, 32%, 17%);
+.content .addbtn:hover {
+  background: hsl(0deg, 66%, 54%);
+  color: rgb(255, 255, 255);
+  font-weight: 300;
 }
 .content p {
   font-size: 1rem;
